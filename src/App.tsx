@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import CardContainer from "./components/card-container";
 import FullPage from "./components/full-page";
 import LocomotiveScroll from 'locomotive-scroll';
-import { ModeToggle } from "./provider/mode-toggle";
 
 
 export default function App() {
@@ -11,7 +10,6 @@ export default function App() {
   },[])
   return (
     <>
-      <ModeToggle/>
       <FullPage title="Scroll down"/>
       <CardContainer />
       <FullPage title="Thank you "/>
