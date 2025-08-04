@@ -4,6 +4,7 @@ import FullPage from "./components/full-page";
 import LocomotiveScroll from 'locomotive-scroll';
 import { ModeToggle } from "./provider/mode-toggle";
 
+
 export default function App() {
   useEffect(()=> {
     new LocomotiveScroll()
@@ -11,9 +12,9 @@ export default function App() {
   return (
     <>
       <ModeToggle/>
-      <FullPage background="bg-blue-400" />
+      <FullPage title="Scroll down"/>
       <CardContainer />
-      <FullPage background="bg-green-700" />
+      <FullPage title="Thank you "/>
     </>
   )
 }

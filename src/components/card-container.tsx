@@ -19,7 +19,6 @@ type CardProp = {
 
 export default function CardContainer() {
     const container = useRef<HTMLDivElement>(null)
-    // const cardContainer = useRef<HTMLDivElement>(null)
     useGSAP(()=> {
 
         gsap.utils.toArray<HTMLElement>(".card-block").forEach((card)=> {
@@ -42,14 +41,14 @@ export default function CardContainer() {
         <div ref={container} className='py-10 h-[450vh] container mx-auto relative'>
 
             {webProjects.map(blog => (
-                <div className="p-10 card-block flex items-center justify-between gap-8 bg-white h-[80vh] rounded-[45px] sticky top-10 -mb-[600px]">
+                <div className="p-10 card-block flex items-center justify-between gap-8 bg-white h-[80vh] rounded-[45px] sticky top-10 -mb-[500px]">
                     {/* information */}
-                    <div className="flex flex-col gap-8 items-start w-2/5">
-                        <h1 className="text-7xl">{blog.title}</h1>
+                    <div className="flex flex-col lg:gap-8 gap-2 items-start w-2/5">
+                        <h1 className="lg:text-7xl text-2xl font-medium">{blog.title}</h1>
                         <div>
                             {blog.category.map(cate => <Badge variant={"secondary"} className="px-4 py-2 m-2 rounded-full bg-background hover:bg-foreground hover:text-background outline outline-gray-300 hover:outline-none transition-all duration-300">{cate}</Badge>)}
                         </div>
-                        <p className="text-xl ">{blog.description}</p>
+                        <p className="lg:text-xl text-muted-foreground text-sm">{blog.description}</p>
                         <MagneticButton distance={0.6}>
                             <Button className="border-2 border-slate-800 rounded-full" variant={"ghost"}>Find out more <ArrowRight /> </Button>
                         </MagneticButton>
@@ -62,11 +61,11 @@ export default function CardContainer() {
                 </div>
             ))}
 
-            <div className="flex items-center justify-center">
+            {/* <div className="flex items-center justify-center">
                 <h1 className="text-7xl ">
                     Thank you very much for the show
                 </h1>
-            </div>
+            </div> */}
         </div>
     )
 }
@@ -77,27 +76,27 @@ const webProjects: CardProp[] = [
         title: "E-Commerce Platform",
         category: ["React", "Next.js", "Stripe", "MongoDB", "Tailwind", "Authentication"],
         description: "A fully functional e-commerce website with user authentication, product management, and secure payments.",
-        image: "https://videos.openai.com/vg-assets/assets%2Ftask_01jzakjbq3eb093xmvf53dg747%2F1751629018_img_0.webp?st=2025-07-04T12%3A55%3A54Z&se=2025-07-10T13%3A55%3A54Z&sks=b&skt=2025-07-04T12%3A55%3A54Z&ske=2025-07-10T13%3A55%3A54Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=3d249c53-07fa-4ba4-9b65-0bf8eb4ea46a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=6LZ3cIXp2dKJH4y27%2FHa%2FivPvABdzTV%2BglZ2x1USQxY%3D&az=oaivgprodscus"
+        image: "/MainAfter.avif"
     },
     {
         id: 2,
         title: "Portfolio Website",
-        category: ["HTML", "CSS", "JavaScript", "Responsive Design"],
+        category: ["React", "Next.js", "TypeScript", "", "Tailwind", "Authentication"],
         description: "A clean and modern personal portfolio website to showcase skills and projects.",
-        image: "https://videos.openai.com/vg-assets/assets%2Ftask_01jzaksg6wfcct9w0rgdfvwtw3%2F1751629380_img_0.webp?st=2025-07-04T13%3A16%3A40Z&se=2025-07-10T14%3A16%3A40Z&sks=b&skt=2025-07-04T13%3A16%3A40Z&ske=2025-07-10T14%3A16%3A40Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=3d249c53-07fa-4ba4-9b65-0bf8eb4ea46a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=iqScBIWyFQc%2BdKrtbXpMazrZ2Wnm8M3V%2FLXG1ZK3Zlo%3D&az=oaivgprodscus"
+        image: "/MainAfter.avif"
     },
     {
         id: 3,
         title: "Blog Platform",
         category: ["Next.js", "MDX", "SEO", "Tailwind", "Content Management"],
         description: "A blog platform with SEO optimization, markdown support, and dynamic content management.",
-        image: "https://videos.openai.com/vg-assets/assets%2Ftask_01jz5e7phme6wvt20qfh6h6nek%2F1751455642_img_1.webp?st=2025-07-04T14%3A09%3A25Z&se=2025-07-10T15%3A09%3A25Z&sks=b&skt=2025-07-04T14%3A09%3A25Z&ske=2025-07-10T15%3A09%3A25Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=3d249c53-07fa-4ba4-9b65-0bf8eb4ea46a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=WwNwwF2MsZ%2FC8f9eviuH8s%2BlD99FRG7QCgk3o%2BJazeY%3D&az=oaivgprodscus"
+        image: "/MainAfter.avif"
     },
     {
         id: 4,
         title: "Real-time Chat App",
         category: ["React", "Socket.io", "Tailwind", "Node.js", "MongoDB"],
         description: "A real-time chat application with authentication, responsive design, and group chats.",
-        image: "https://videos.openai.com/vg-assets/assets%2Ftask_01jzawnpdzfxgtdaya7d7x61nf%2F1751638719_img_1.webp?st=2025-07-04T14%3A10%3A45Z&se=2025-07-10T15%3A10%3A45Z&sks=b&skt=2025-07-04T14%3A10%3A45Z&ske=2025-07-10T15%3A10%3A45Z&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skoid=3d249c53-07fa-4ba4-9b65-0bf8eb4ea46a&skv=2019-02-02&sv=2018-11-09&sr=b&sp=r&spr=https%2Chttp&sig=1jXKOIYOkIojY%2BWUj67FM3lcB6wxjCvVscruExvJ52A%3D&az=oaivgprodscus"
+        image: "/MainAfter.avif"
     }
 ];
